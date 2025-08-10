@@ -1,0 +1,450 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+h1 {
+  position: relative;
+  display: inline-block; 
+  padding-bottom: 4px; 
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px dotted #aaa ; 
+}
+.nav-link-custom {
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+.nav-link-custom:hover {
+    color: #0dcaf0; 
+}
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+.nav-link {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+#mainNavbar {
+    transition: all 0.4s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+#mainNavbar.bg-transparent {
+    background-color: rgba(0, 0, 0, 0.3); 
+    color: white;
+}
+
+#mainNavbar.bg-white {
+    background-color: white !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    position: fixed;
+}
+
+#mainNavbar.bg-white .nav-link,
+#mainNavbar.bg-white .navbar-brand {
+    color: #222 !important;
+}
+
+#mainNavbar .nav-link,
+#mainNavbar .navbar-brand {
+    transition: color 0.3s ease;
+}
+
+/* ========================end navbar================================================== */
+/* ========================start hero sec================================================ */
+.hero-section {
+    height: 100vh;
+    background-image: url(../images/bg.jpg); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.hero-section .content h1 {
+        font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+    color: RGB(255, 255, 255);
+}
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1;
+}
+.hero-section .content {
+    position: relative;
+    z-index: 2;
+}
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    text-decoration: none;
+}
+/* ==============================end hero sec================================= */
+/* =============================start about sec===================================== */
+.custom-bar {
+    position: relative;
+    background-color: black !important;
+    width: 0;
+    height: 100%;
+    animation: fillProgress 2s forwards;
+}
+
+.custom-bar .label-end{
+    position: absolute;
+    right: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.custom-bar .label-start {
+    position: absolute;
+    left: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@keyframes fillProgress {
+    to {
+        width: var(--target-width);
+    }
+}
+.btn-black {
+    background-color: black !important;
+    color: white !important;
+    border: 2px solid black !important;
+    transition: all 0.3s ease;
+}
+.btn-black:hover {
+    background-color: white !important;
+    color: black !important;
+    border: 2px solid black !important;
+}
+.btn-outline-black {
+    background-color: transparent !important;
+    color: black !important;
+    border: 2px solid black !important;
+    transition: all 0.3s ease;
+}
+.btn-outline-black:hover {
+    background-color: black !important; 
+    color: white !important;
+}
+.hero img {
+  border-left: 4px dotted #E5E5E5;  
+  border-bottom: 4px dotted #E5E5E5; 
+  border-top: none;
+  border-right: none;
+  border-radius: 0;
+}
+.hero {
+  position: relative;
+  display: inline-block;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  border-left: 4px dotted #E5E5E5;
+  border-radius: 4px 0 0 4px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  border-bottom: 4px dotted #E5E5E5;
+  border-radius: 0 0 4px 4px;
+}
+
+/* ==================================end about sec===================================== */
+/* ==================================star services sec====================================== */
+#services {
+    background-color: #F7F7F7;
+}
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.icon-circle i {
+    color: black;
+    transition: 0.3s;
+}
+
+.icon-circle:hover {
+    background: black;
+    transform: scale(1.1);
+}
+
+.icon-circle:hover i {
+    color: white;
+}
+/* ======================================================================end service sec============================== */
+/* =========================================start work sec============================================= */
+.portfolio-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px;
+}
+
+.portfolio-card img {
+    transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover img {
+    transform: scale(1.1);
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.8);
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 15px; 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay i {
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.overlay i:ho   ver {
+    background-color: black;
+    color: white;
+}
+/* ==========================================end work sec======================================*/
+/* ===========================================start clients sec============================================ */
+.carousel-indicators [data-bs-target] {
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.carousel-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+#review i {
+    display: block;
+}
+
+#review span {
+    color: #333;
+}
+
+#review h3 {
+    margin-top: 5px;
+    color: #555;
+}
+/* =============================================end Clients sec  ================================================ */
+/* ====================================start team sec  ======================================================================= */
+.team-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.team-card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover img {
+    transform: scale(1.05);
+}
+
+.team-card .overlay {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    width: 95%;   
+    height: 80%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 4px solid transparent; 
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.team-card:hover .overlay {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.social-icons i {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icons i:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/* ===========================================end team sec================== */
+/* =========================================start contact sec=========================== */
+#contact h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: RGB(52, 52, 52);
+}
+
+#contact h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px dotted #aaa; 
+}
+
+#contact i {
+    background-color: #ccc; 
+    color: #333;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+#contact span{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: RGB(52, 52, 52);
+}
+#contact h5 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: RGB(116, 129, 130);
+}
+
+#contact i:hover {
+    background-color: #000; 
+    color: #fff;
+}
+
+#contact .btn-primary {
+    background-color: #ccc;
+    border: none;
+    padding: 10px 30px;
+    color: #333;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#contact .btn-primary:hover {
+    background-color: #000;
+    color: #fff;
+}
+/* =================================end contact sec=========================== */
+/* =================================star footer sec================================= */
+footer {
+    background-color:#1C1C1C; 
+    color: rgba(255, 255, 255, 0.185);
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
